@@ -21,20 +21,18 @@ const CreateBooks = () => {
     };
     setLoading(true);
    axios
-  .post('https://bookstore-back-du09.onrender.com/books', data, {
-    withCredentials: true,
-  })
-  .then(() => {
-    setLoading(false);
-    enqueueSnackbar('Book Created successfully', { variant: 'success' });
-    navigate('/');
-  })
-  .catch((error) => {
-    setLoading(false);
-    // alert('An error happened. Please Chack console');
-    enqueueSnackbar('Error', { variant: 'error' });
-    console.log(error);
-  });
+      .post('https://bookstore-back-du09.onrender.com/books', data)
+      .then(() => {
+        setLoading(false);
+        enqueueSnackbar('Book Created successfully', { variant: 'success' });
+        navigate('/');
+      })
+      .catch((error) => {
+        setLoading(false);
+        // alert('An error happened. Please Chack console');
+        enqueueSnackbar('Error', { variant: 'error' });
+        console.log(error);
+      }); 
   };
 
   return (
