@@ -16,7 +16,7 @@ const EditBook = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get(`https://strong-sprinkles-25e59a.netlify.app/books/${id}`)
+    axios.get(`https://bookstore-back-du09.onrender.com/books/${id}`)
     .then((response) => {
         setAuthor(response.data.author);
         setPublishYear(response.data.publishYear)
@@ -37,7 +37,7 @@ const EditBook = () => {
     };
     setLoading(true);
     axios
-      .put(`https://strong-sprinkles-25e59a.netlify.app/books/${id}`, data)
+      .put(`https://bookstore-back-du09.onrender.com/books/${id}`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book Edited successfully', { variant: 'success' });
