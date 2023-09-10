@@ -16,7 +16,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get('https://strong-sprinkles-25e59a.netlify.app/books')
+      .get('https://bookstore-back-du09.onrender.com/books')
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);
