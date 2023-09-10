@@ -20,19 +20,21 @@ const CreateBooks = () => {
       publishYear,
     };
     setLoading(true);
-    axios
-      .post('https://strong-sprinkles-25e59a.netlify.app/books', data)
-      .then(() => {
-        setLoading(false);
-        enqueueSnackbar('Book Created successfully', { variant: 'success' });
-        navigate('/');
-      })
-      .catch((error) => {
-        setLoading(false);
-        // alert('An error happened. Please Chack console');
-        enqueueSnackbar('Error', { variant: 'error' });
-        console.log(error);
-      });
+   axios
+  .post('https://strong-sprinkles-25e59a.netlify.app/books', data, {
+    withCredentials: true,
+  })
+  .then(() => {
+    setLoading(false);
+    enqueueSnackbar('Book Created successfully', { variant: 'success' });
+    navigate('/');
+  })
+  .catch((error) => {
+    setLoading(false);
+    // alert('An error happened. Please Chack console');
+    enqueueSnackbar('Error', { variant: 'error' });
+    console.log(error);
+  });
   };
 
   return (
